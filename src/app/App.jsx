@@ -6,6 +6,7 @@ import Footer from '../common/component/Footer/Footer'
 import ProcessBar from '../common/component/ProcessBar/ProcessBar'
 import TextArea from '../common/component/TextArea/TextArea'
 import GenDropdown from '../common/component/GenDropdown/GenDropdown'
+import StateSwitch from '../common/component/StateSwitch/StateSwitch'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       <ProcessBar />
       <TextArea/>
       <GenDropdown/>
+      <StateSwitch/>
     </>
   )
 }
