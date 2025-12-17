@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+}
+
+.footerNew1 {
+margin-top: auto;
+}
+
+
+.Mydetailfirst {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
