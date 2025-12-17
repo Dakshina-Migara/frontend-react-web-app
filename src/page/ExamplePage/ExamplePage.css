@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerNew {
+    margin-top: auto;
+}
+
+.sampleImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
