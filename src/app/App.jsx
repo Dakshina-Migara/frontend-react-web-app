@@ -7,6 +7,7 @@ import ProcessBar from '../common/component/ProcessBar/ProcessBar'
 import TextArea from '../common/component/TextArea/TextArea'
 import GenDropdown from '../common/component/GenDropdown/GenDropdown'
 import StateSwitch from '../common/component/StateSwitch/StateSwitch'
+import ChildSlider from '../common/component/ChildSlider/ChildSlider'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,9 +18,10 @@ function App() {
       <ButtonNav />
       <Footer />
       <ProcessBar />
-      <TextArea/>
-      <GenDropdown/>
-      <StateSwitch/>
+      <TextArea />
+      <GenDropdown />
+      <StateSwitch />
+      <ChildSlider />
     </>
   )
 }
