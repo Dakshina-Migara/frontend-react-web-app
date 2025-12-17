@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+}
+
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerNew {
+    margin-top: auto;
+}
+
+.communityImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
