@@ -3,7 +3,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function GenDropdown({ onChange }) {
+export default function GenDropdown({ onChange , marginleft }) {
     const [title, setTitle] = React.useState('');
 
     const handleChange = (event) => {
@@ -25,7 +25,7 @@ export default function GenDropdown({ onChange }) {
 
     return (
         <div>
-            <FormControl sx={{ m: 1, minWidth: 60 }}>
+            <FormControl sx={{ m: 1, minWidth: 62 , position:'absolute', top:'268px',  }}>
                 <Select
                     value={title}
                     onChange={handleChange}
@@ -34,11 +34,14 @@ export default function GenDropdown({ onChange }) {
                         borderRadius: '8px',
                         borderColor: '#969BAB',
                         border: '1px solid',
-                        height: '40px',
-                        paddingLeft: '18px',
+                        height: '35px',
+                        paddingLeft: '14px',
                         '& .MuiSelect-icon': {
-                            left: '5px',
-                        }
+                            left: '3px',
+                        },
+                        marginLeft:marginleft,
+                        width:'61px'
+
                     }}
                     inputProps={{ 'aria-label': 'Without label' }}
                 >

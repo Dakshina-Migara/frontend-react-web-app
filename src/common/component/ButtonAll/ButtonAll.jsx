@@ -2,7 +2,7 @@ import './ButtonAll.css';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-export default function ButtonAll({ accountButton, text, boxsx = {} }) {
+export default function ButtonAll({ accountButton, text , height , left , top}) {
     return (
         <div>
             <Stack direction="row" spacing={2} className="buttonall">
@@ -10,7 +10,7 @@ export default function ButtonAll({ accountButton, text, boxsx = {} }) {
                     onClick={accountButton}
                     sx={{
                         width: '100%',
-                        height: '50px',
+                        height: height,
                         backgroundColor: '#FE5000',
                         border: '1px solid #FE5000',
                         color: '#ffffffff',
@@ -18,6 +18,8 @@ export default function ButtonAll({ accountButton, text, boxsx = {} }) {
                         textTransform: 'none',
                         fontSize: '15px',
                         fontWeight: 'bold',
+                        left:left,
+                        top:top
                     }}>
                     {text}
                 </Button>

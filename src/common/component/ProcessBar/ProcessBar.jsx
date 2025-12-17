@@ -14,18 +14,20 @@ export default function ProcessBar({ backtap, processVal, processStep, processTe
             </IconButton>
 
             <Typography
-                variant="h5"
+                variant="caption"
                 sx={{
                     fontWeight: 'bold',
                     flexGrow: 1,
                     textAlign: 'center',
+                    display: 'block',
+                    fontSize: '12px'
                 }}
             >
                 {processText}
             </Typography>
 
             <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-                <CircularProgress sx={{ color: '#FE5000' }} enableTrackSlot variant="determinate" value={processVal} thickness={8} size={60} />
+                <CircularProgress sx={{ color: '#FE5000' }} enableTrackSlot variant="determinate" value={processVal} thickness={8} size={47} />
                 <Box
                     sx={{
                         top: 0,
@@ -41,7 +43,7 @@ export default function ProcessBar({ backtap, processVal, processStep, processTe
                     <Typography
                         variant="caption"
                         component="div"
-                        sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: '0.65rem', textAlign: 'center' }}
+                        sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: '0.55rem', textAlign: 'center' }}
                     >
                         Step<br></br> {processStep} of 3
                     </Typography>
