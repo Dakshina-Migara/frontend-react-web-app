@@ -4,11 +4,13 @@ import { styled } from '@mui/material/styles';
 import FormHelperText from '@mui/material/FormHelperText';
 import Box from '@mui/material/Box';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
+import BoyIcon from '@mui/icons-material/Boy';
 
 const BoxSwitch = styled(Switch)(({ theme }) => ({
     width: '250px',
     height: '50px',
     padding: '5px',
+
     '& .MuiSwitch-switchBase': {
         margin: 3.5,
         padding: 0,
@@ -47,7 +49,7 @@ const BoxSwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
-export default function StateSwitch({singleIcon}) {
+export default function StateSwitch({ left }) {
     const [checked, setChecked] = React.useState(true);
 
     const handleChange = (event) => {
@@ -55,7 +57,7 @@ export default function StateSwitch({singleIcon}) {
     };
 
     return (
-        <div style={{ position: 'relative', width: '250px' }}>
+        <div style={{ position: 'relative', width: '250px', left: left }}>
             <Box sx={{ marginBottom: 0.5, marginLeft: 1 }}>
                 <FormHelperText>Marital Status</FormHelperText>
             </Box>
@@ -70,7 +72,7 @@ export default function StateSwitch({singleIcon}) {
                 alignItems: 'center',
                 gap: '10px',
             }}>
-                {singleIcon}Single</span>
+                <BoyIcon />Single</span>
             <span style={{
                 position: 'absolute',
                 right: 20,
@@ -79,7 +81,7 @@ export default function StateSwitch({singleIcon}) {
                 fontWeight: 'bold',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px', 
+                gap: '10px',
             }}>
                 <FamilyRestroomIcon />Married</span>
         </div>
