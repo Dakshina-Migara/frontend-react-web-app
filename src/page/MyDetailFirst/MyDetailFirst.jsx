@@ -16,12 +16,16 @@ export default function MyDetailFirst() {
 
             <ImgNav />
 
+
+
             <ProcessBar
                 processText={'My Details'}
                 backtap={() => console.log('halooooo')}
                 processStep={1}
                 processVal={33.33}
             />
+
+
 
             <Box sx={{
                 maxWidth: 500,
@@ -39,15 +43,56 @@ export default function MyDetailFirst() {
                 </Typography>
             </Box>
 
-            <TextArea textFieldText='First Name' placeholderText='' startIcon={<PersonIcon />} width='13%' />
 
-            <GenDropdown marginleft='510px' />
 
-            <TextArea textFieldText='Last Name' placeholderText='' startIcon={<PersonIcon />} width='19%' right='70px' />
+            <Box sx={{ width: '250px', margin: '0px auto', marginRight:'390px' }}>
+                <Box sx={{ display: 'flex', gap: '10px' }}>
+                    <Box sx={{ width: '70px' }}>
+                        <GenDropdown />
+                    </Box>
 
-            <TextArea textFieldText='My Date Of birth' placeholderText='' startIcon={<PersonIcon />} width='19%' right='70px' />
+                    <Box sx={{ width:'170px' }}>
+                        <TextArea
+                            textFieldText="First Name"
+                            startIcon={<PersonIcon />}
+                            width="100%"
+                        />
+                    </Box>
+                </Box>
 
-            <ButtonAll accountButton={() => console.log('clicked')} text='Next->' height='30px' left='665px' top='20px'/>
+                <Box sx={{ marginTop: '12px'}}>
+                    <TextArea
+                        textFieldText="Last Name"
+                        startIcon={<PersonIcon />}
+                        width="100%"
+                    />
+                </Box>
+
+                <Box sx={{ marginTop: '12px' }}>
+                    <TextArea
+                        textFieldText="My date of birth"
+                        startIcon={<PersonIcon />}
+                        width="100%"
+                    />
+                </Box>
+            </Box>
+
+
+
+            <div style={{ marginBottom: '120px' , marginTop:'20px' }}>
+                <ButtonAll
+                    accountButton={() => console.log('clicked')}
+                    text='Next->'
+                    height='40px'
+                    left='665px'
+                    top='20px'
+                    textColor='white'
+                    backcolor='#FE5000'
+                    width='100px'
+                />
+            </div>
+
+
 
             <div className='footerNew1'>
                 <Footer />
