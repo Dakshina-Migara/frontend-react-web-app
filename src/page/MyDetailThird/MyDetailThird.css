@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+}
+
+.MyDetailThird {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageContent {
+    flex: 1;
+}
+
+.footerNew1 {
+    margin-top: auto;
+}
