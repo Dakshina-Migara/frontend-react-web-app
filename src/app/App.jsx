@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      <HomePage />
-      {/* <ExamplePage /> */}
+      {/* <HomePage /> */}
+      <ExamplePage />
       {/* <MyDetailFirst /> */}
       {/* <MyDetailSecond /> */}
       {/* <MyDetailThird /> */}

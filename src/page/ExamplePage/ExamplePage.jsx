@@ -44,6 +44,8 @@ export default function ExamplePage() {
 
                     <ButtonAll
                         text='Get Started ->'
+                        textColor='white'
+                        backcolor='#FE5000'
                         accountButton={() => console.log('clicked')}
                     />
 
