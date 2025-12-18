@@ -44,6 +44,8 @@ export default function HomePage() {
 
                     <ButtonAll
                         text='Get Started ->'
+                        backcolor='#FE5000'
+                        textColor='white'
                         accountButton={() => console.log('clicked')}
                     />
 
