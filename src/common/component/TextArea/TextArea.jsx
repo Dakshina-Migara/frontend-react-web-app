@@ -4,7 +4,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export default function TextArea({ placeholderText, textFieldText, startIcon , width , right }) {
+export default function TextArea({ placeholderText, textFieldText, startIcon , width }) {
     return (
         <form noValidate autoComplete="off">
             <FormControl sx={{ width: width }}>
