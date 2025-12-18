@@ -1,29 +1,57 @@
 import React from 'react';
-import './Footer.css';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { IconButton } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
 export default function Footer() {
     return (
-        <div className="footer">
-            <div className="socialIcons1">
-                <IconButton aria-label="facebook" className='iconButton'>
+        <Box
+            component="footer"
+            sx={{
+                width: '100%',
+                paddingTop: '8px',
+                paddingBottom: '8px',
+                paddingLeft: '16px',
+                paddingRight: '16px',
+                backgroundColor: '#ffffffff',
+                display: 'flex',
+                flexDirection: 'row',   
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                boxSizing: 'border-box',
+                flexWrap: 'wrap',      
+            }}
+        >
+            <Box sx={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070', width: '28px', height: '28px' }}>
                     <FacebookOutlinedIcon />
                 </IconButton>
-                <IconButton aria-label="instagram" className='iconButton'>
+                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070', width: '28px', height: '28px' }}>
                     <InstagramIcon />
                 </IconButton>
-                <IconButton aria-label="linkedin" className='iconButton'>
+                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070', width: '28px', height: '28px'}}>
                     <LinkedInIcon />
                 </IconButton>
-                <IconButton aria-label="twitter" className='iconButton'>
+                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070',width: '28px', height: '28px'}}>
                     <TwitterIcon />
                 </IconButton>
-            </div>
-            <h4 className="footerText">Find your Needs</h4>
-        </div>
+            </Box>
+
+            <Typography
+                sx={{
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    color: '#747070',
+                    textAlign: 'right',
+                    marginTop: '0px',      
+                }}
+            >
+                Find your Needs
+            </Typography>
+        </Box>
     );
 }
