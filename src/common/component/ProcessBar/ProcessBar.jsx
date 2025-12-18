@@ -43,7 +43,7 @@ export default function ProcessBar({ backtap, processVal, processStep, processTe
                     <Typography
                         variant="caption"
                         component="div"
-                        sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: '0.55rem', textAlign: 'center' }}
+                        sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: '0.50rem', textAlign: 'center' }}
                     >
                         Step<br></br> {processStep} of 3
                     </Typography>

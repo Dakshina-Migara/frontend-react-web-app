@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+}
+
+.MyGoals {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerNew1 {
+    margin-top: auto;
+}
+
+.goalImageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 80px;
+    max-width: 1000px;
+}
+
+.goalImage {
+    width: 320px;
+    height: 200px;
+    object-fit: contain;
+}
