@@ -5,8 +5,18 @@ import Footer from '../../common/component/Footer/Footer'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ButtonAll from '../../common/component/ButtonAll/ButtonAll';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { nextStep } from '../../redux/formSlice';
 
 export default function ExamplePage() {
+     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleGetStarted = () => {
+        dispatch(nextStep());  
+        navigate('/thirdpage');
+    }
     return (
         <div className='example-container'>
             <Imgnav />
@@ -46,7 +56,7 @@ export default function ExamplePage() {
                         text='Get Started ->'
                         textColor='white'
                         backcolor='#FE5000'
-                        accountButton={() => console.log('clicked')}
+                        accountButton={handleGetStarted}
                     />
 
                 </Box>
