@@ -7,6 +7,7 @@ import MyDetailSecond from '../page/MyDetailSecond/MyDetailSecond.jsx'
 import MyDetailThird from '../page/MyDetailThird/MyDetailThird'
 import MyGoals from '../page/MyGoals/MyGoals.jsx'
 import { Route, Routes } from 'react-router-dom'
+import ProtectedRoute from '../common/protected/ProtectedRoute.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
