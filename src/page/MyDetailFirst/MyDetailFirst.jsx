@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './MyDetailFirst.css'
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ImgNav from '../../common/component/Imgnav/Imgnav';
@@ -11,9 +13,6 @@ import TextArea from '../../common/component/TextArea/TextArea';
 import PersonIcon from '@mui/icons-material/Person';
 import ButtonAll from '../../common/component/ButtonAll/ButtonAll';
 import { nextStep, saveData } from '../../redux/formSlice';
-
-
-
 
 export default function MyDetailFirst() {
     const dispatch = useDispatch();
@@ -30,6 +29,7 @@ export default function MyDetailFirst() {
 
     const [isValid, setIsValid] = useState(false);
 
+
     const calculateAge = (dobValue) => {
         if (!dobValue) return '';
         const birthDate = new Date(dobValue);
@@ -43,7 +43,6 @@ export default function MyDetailFirst() {
     };
 
 
-
     useEffect(() => {
         setIsValid(
             firstName.trim() &&
@@ -53,7 +52,6 @@ export default function MyDetailFirst() {
             genderData.gender
         );
     }, [firstName, lastName, dob, age, genderData]);
-
 
 
     const handleNext = () => {
@@ -73,7 +71,6 @@ export default function MyDetailFirst() {
         <div className='Mydetailfirst'>
 
             <ImgNav />
-
 
 
             <ProcessBar
