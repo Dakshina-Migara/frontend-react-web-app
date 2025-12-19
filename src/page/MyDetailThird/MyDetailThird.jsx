@@ -45,11 +45,19 @@ export default function MyDetailThird() {
         setKids(newKids);
     };
 
-    const isValid = !isMarried || kids.slice(0, numKids).every(k => k.name.trim() && k.age.trim());
+    const isValid = !isMarried
+        ? true
+        : kids
+            .slice(0, numKids)
+            .every(kid => kid.name && kid.age);
 
     const handleNext = () => {
         if (!isValid) return;
-        dispatch(saveData({ kids }));
+
+        dispatch(saveData({
+            kids: isMarried ? kids.slice(0, numKids) : []
+        }));
+
         dispatch(nextStep());
         navigate('/sixpage');
     };
@@ -85,7 +93,7 @@ export default function MyDetailThird() {
                     gutterBottom
                     sx={{ fontWeight: 'bold' }}
                 >
-                    {isMarried ? 'I have (Kids)' : 'You are single'}
+                    {isMarried ? 'I have (Kids)' : 'I am Single'}
                 </Typography>
             </Box>
 
@@ -114,20 +122,21 @@ export default function MyDetailThird() {
                             />
                         </Box>
                     ))}
-
-                    <Box sx={{ marginTop: '50px', display: 'flex', justifyContent: 'center', marginBottom: '120px', marginLeft: '250px' }}>
-                        <ButtonAll
-                            text="Next ->"
-                            accountButton={handleNext}
-                            backcolor="#FE5000"
-                            textColor="white"
-                            width="100px"
-                            height="40px"
-                            disabled={!isValid}
-                        />
-                    </Box>
                 </div>
             )}
+
+            
+            <Box sx={{ marginTop: '50px', display: 'flex', justifyContent: 'center', marginBottom: '120px', marginLeft: '250px' }}>
+                <ButtonAll
+                    text="Next ->"
+                    accountButton={handleNext}
+                    backcolor="#FE5000"
+                    textColor="white"
+                    width="100px"
+                    height="40px"
+                    disabled={!isValid}
+                />
+            </Box>
 
             <div className='footerNew1'>
                 <Footer />
