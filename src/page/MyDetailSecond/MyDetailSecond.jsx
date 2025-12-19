@@ -8,8 +8,48 @@ import TextArea from '../../common/component/TextArea/TextArea'
 import ButtonAll from '../../common/component/ButtonAll/ButtonAll'
 import StateSwitch from '../../common/component/StateSwitch/StateSwitch'
 import GirlIcon from '@mui/icons-material/Girl';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { saveData, nextStep } from '../../redux/formSlice';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function MyDetailSecond() {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const formData = useSelector((state) => state.form.data);
+    const userName = `${formData.firstName || ''} ${formData.lastName || ''}`;
+    const gender = formData.genderData?.gender || '';
+    const age = formData.age || '';
+
+    const [isMarried, setIsMarried] = useState(formData.isMarried || false);
+    const [spouseName, setSpouseName] = useState(formData.spouseName || '');
+    const [isValid, setIsValid] = useState(false);
+
+
+    useEffect(() => {
+        setIsValid(isMarried ? spouseName.trim() !== '' : true);
+    }, [isMarried, spouseName]);
+
+
+
+
+    const handleNext = () => {
+        if (!isValid) return;
+
+        dispatch(saveData({
+            isMarried,
+            spouseName: isMarried ? spouseName : ''
+        }));
+
+        dispatch(nextStep());
+        navigate('/fifthpage');
+    };
+
+
+
     return (
         <div className='MydetailSecond'>
 
@@ -29,7 +69,7 @@ export default function MyDetailSecond() {
 
 
             <Typography variant="h6" gutterBottom sx={{ marginLeft: '520px', lineHeight: 1.8, marginTop: '20px' }}>
-                My name is {'userName'}
+                My name is {userName}
 
             </Typography>
 
@@ -40,7 +80,7 @@ export default function MyDetailSecond() {
                 variant="h6"
                 sx={{ marginLeft: '480px' }}
             >
-                And I am {'gender'} of {'age'} years old.
+                And I am {gender} of {age} years old.
             </Typography>
 
 
@@ -68,19 +108,24 @@ export default function MyDetailSecond() {
             <div style={{ width: '500px', gap: '20px', marginTop: '20px', marginBottom: '140px' }}>
                 <StateSwitch
                     left='500px'
+                    checked={isMarried}
+                    onChange={(val) => setIsMarried(val)}
                 />
-
-                <TextArea
-                    textFieldText='My wife is'
-                    placeholderText=''
-                    startIcon={<GirlIcon />}
-                    width='50%'
-                    left='500px'
-                    margintop='20px'
-                />
+                {isMarried && (
+                    <TextArea
+                        textFieldText='My wife is'
+                        placeholderText=''
+                        startIcon={<GirlIcon />}
+                        width='50%'
+                        left='500px'
+                        margintop='20px'
+                        value={spouseName}
+                        onChange={(val) => setSpouseName(val.target.value)}
+                    />
+                )}
 
                 <ButtonAll
-                    accountButton={() => console.log('clicked')}
+                    accountButton={handleNext}
                     text='Next->'
                     height='40px'
                     width='100px'
@@ -88,6 +133,7 @@ export default function MyDetailSecond() {
                     top='50px'
                     textColor='white'
                     backcolor='#FE5000'
+                    disabled={!isValid}
                 />
             </div>
 

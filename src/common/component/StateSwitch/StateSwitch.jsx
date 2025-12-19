@@ -15,14 +15,17 @@ const BoxSwitch = styled(Switch)(({ theme }) => ({
         margin: 3.5,
         padding: 0,
         borderRadius: 8,
-        transform: 'translateX(119px)',
+        transform: 'translateX(0px)',
         '&.Mui-checked': {
             color: '#ffffffff',
-            transform: 'translateX(0px)',
+            transform: 'translateX(125px)',
             '& + .MuiSwitch-track': {
                 opacity: 1,
                 backgroundColor: '#FE5000',
                 borderRadius: 10,
+            },
+            '&:not(.Mui-checked)': {
+                transform: 'translateX(0px)',
             },
         },
     },
@@ -49,12 +52,12 @@ const BoxSwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
-export default function StateSwitch({ left }) {
-    const [checked, setChecked] = React.useState(true);
+export default function StateSwitch({ left, checked, onChange }) {
 
     const handleChange = (event) => {
-        setChecked(event.target.checked);
+        if (onChange) onChange(event.target.checked);
     };
+
 
     return (
         <div style={{ position: 'relative', width: '250px', left: left }}>

@@ -10,11 +10,8 @@ import { Route, Routes } from 'react-router-dom'
 import ProtectedRoute from '../common/protected/ProtectedRoute.jsx'
 
 function App() {
-
-
   return (
     <>
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/firstpage" element={<HomePage />} />

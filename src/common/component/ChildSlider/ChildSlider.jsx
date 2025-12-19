@@ -4,13 +4,13 @@ import Slider from '@mui/material/Slider';
 function valuetext(value) {
     return `${value}°C`;
 }
-export default function ChildSlider({ childBox, values , marginleft , marginTop }) {
+export default function ChildSlider({ onChange, value, marginleft, marginTop }) {
     return (
-        <Box sx={{ width: 250 , marginLeft:marginleft , marginTop:marginTop}}>
+        <Box sx={{ width: 250, marginLeft: marginleft, marginTop: marginTop }}>
             <Slider
                 aria-label="ChildCount"
-                defaultValue={values}
-                onChange={childBox}
+                value={value}
+                onChange={onChange}
                 getAriaValueText={valuetext}
                 valueLabelDisplay="on"
                 shiftStep={10}
