@@ -6,18 +6,24 @@ import MyDetailFirst from '../page/MyDetailFirst/MyDetailFirst.jsx'
 import MyDetailSecond from '../page/MyDetailSecond/MyDetailSecond.jsx'
 import MyDetailThird from '../page/MyDetailThird/MyDetailThird'
 import MyGoals from '../page/MyGoals/MyGoals.jsx'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* <HomePage /> */}
-      {/* <ExamplePage /> */}
-      {/* <MyDetailFirst /> */}
-      <MyDetailSecond />
-      {/* <MyDetailThird /> */}
-      {/* <MyGoals /> */}
+
+      <Routes>
+        <Route path='*' element={<HomePage />}></Route>
+        <Route path='/firstpage' element={<HomePage />}></Route>
+        <Route path='/secondpage' element={<ExamplePage />}></Route>
+        <Route path='/thirdpage' element={<MyDetailFirst />}></Route>
+        <Route path='/fourthpage' element={<MyDetailSecond />}></Route>
+        <Route path='/fifthpage' element={<MyDetailThird />}></Route>
+        <Route path='/sixpage' element={<MyGoals />}></Route>
+      </Routes>
+
     </>
   )
 }

@@ -10,11 +10,13 @@ import ChildSlider from '../../common/component/ChildSlider/ChildSlider'
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-export default function MyDetailThird() {
+export default function MyDetailThird({ userName, gender, age, spouseName, kids }) {
     return (
         <div className='MyDetailThird'>
 
             <ImgNav />
+
+
 
             <ProcessBar
                 processText={'My Details'}
@@ -23,23 +25,15 @@ export default function MyDetailThird() {
                 processVal={68}
             />
 
-            <Typography variant="h6" gutterBottom sx={{ marginLeft: '520px', lineHeight: 1.6, marginTop: '20px' }}>
-                My name is arjum <br />
-            </Typography>
 
-            <Typography
-                variant="h6"
-                sx={{ marginLeft: '480px'  }}
-            >
-                And I am male of 35 years old.
-            </Typography>
 
-             <Typography
-                variant="h6"
-                sx={{ marginLeft: '500px' , marginTop: '10px' }}
-            >
-              I am married to Dilu.
-            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 3, gap: '15px' }}>
+                <Typography variant="h6">My name is {userName}</Typography>
+                <Typography variant="h6">And I am {gender} of {age} years old.</Typography>
+                <Typography variant="h6">I am married to {spouseName}</Typography>
+            </Box>
+
+
 
             <Box sx={{
                 maxWidth: 500,
@@ -58,24 +52,28 @@ export default function MyDetailThird() {
             </Box>
 
             <div className="pageContent">
-                <ChildSlider marginleft='460px' marginTop='60px' />
 
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        gap: 1,
-                        mt: 4
-                    }}
-                >
+
+                <Box sx={{ marginTop: 4, display: 'flex', justifyContent: 'center' }}>
+                    <ChildSlider kids={kids} />
+                </Box>
+
+
+
+                <Box sx={{ marginTop: 4, display: 'flex', gap: 2, justifyContent: 'center' }}>
                     <TextArea textFieldText="My kid is" startIcon={<EmojiPeopleIcon />} />
                     <TextArea textFieldText="he/she is" width="120px" />
                 </Box>
-                
-                <Box sx={{ mt: 5, display: 'flex', justifyContent: 'center' }}>
+
+
+                <Box sx={{ marginTop: '50px', display: 'flex', justifyContent: 'center', marginBottom: '120px', marginLeft: '250px' }}>
                     <ButtonAll
-                        text="Next ->" 
+                        text="Next ->"
                         accountButton={() => console.log('clicked')}
+                        backcolor="#FE5000"
+                        textColor="white"
+                        width="100px"
+                        height="40px"
                     />
                 </Box>
             </div>
