@@ -10,21 +10,47 @@ import { Route, Routes } from 'react-router-dom'
 import ProtectedRoute from '../common/protected/ProtectedRoute.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
 
       <Routes>
-        <Route path='*' element={<HomePage />}></Route>
-        <Route path='/firstpage' element={<HomePage />}></Route>
-        <Route path='/secondpage' element={<ExamplePage />}></Route>
-        <Route path='/thirdpage' element={<MyDetailFirst />}></Route>
-        <Route path='/fourthpage' element={<MyDetailSecond />}></Route>
-        <Route path='/fifthpage' element={<MyDetailThird />}></Route>
-        <Route path='/sixpage' element={<MyGoals />}></Route>
-      </Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/firstpage" element={<HomePage />} />
 
+        <Route path="/secondpage" element={
+          <ProtectedRoute stepRequired={2}>
+            <ExamplePage />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/thirdpage" element={
+          <ProtectedRoute stepRequired={3}>
+            <MyDetailFirst />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/fourthpage" element={
+          <ProtectedRoute stepRequired={4}>
+            <MyDetailSecond />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/fifthpage" element={
+          <ProtectedRoute stepRequired={5}>
+            <MyDetailThird />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/sixpage" element={
+          <ProtectedRoute stepRequired={6}>
+            <MyGoals />
+          </ProtectedRoute>
+        } />
+
+        <Route path="*" element={<HomePage />} />
+      </Routes>
     </>
   )
 }

@@ -5,8 +5,19 @@ import Footer from '../../common/component/Footer/Footer'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ButtonAll from '../../common/component/ButtonAll/ButtonAll';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { nextStep } from '../../redux/formSlice';
 
 export default function HomePage() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleGetStarted = () => {
+        dispatch(nextStep());  
+        navigate('/secondpage');
+    }
+
     return (
         <div className='homepage-container'>
             <Imgnav />
@@ -46,7 +57,7 @@ export default function HomePage() {
                         text='Get Started ->'
                         backcolor='#FE5000'
                         textColor='white'
-                        accountButton={() => console.log('clicked')}
+                        accountButton={handleGetStarted}
                     />
 
                 </Box>

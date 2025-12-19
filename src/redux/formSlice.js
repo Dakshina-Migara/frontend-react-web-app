@@ -1,25 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentStep: 1,
-  formData: {}
+  step: 1,  
+  data: {}  
 };
 
 const formSlice = createSlice({
   name: "form",
   initialState,
   reducers: {
-    completeStep: (state, action) => {
-      state.currentStep = Math.max(state.currentStep, action.payload + 1);
+    nextStep: (state) => {
+      state.step += 1;  
     },
     saveData: (state, action) => {
-      state.formData = {
-        ...state.formData,
-        ...action.payload
-      };
+      state.data = { ...state.data, ...action.payload };
     }
   }
 });
 
-export const { completeStep, saveData } = formSlice.actions;
+export const { nextStep, saveData } = formSlice.actions;
 export default formSlice.reducer;
