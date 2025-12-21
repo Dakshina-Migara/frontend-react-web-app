@@ -147,7 +147,7 @@ export default function MyDetailFirst() {
 
 
 
-            <div style={{ marginBottom: '120px', marginTop: '20px' }}>
+            <Box style={{ marginBottom: '120px', marginTop: '20px' }}>
                 <ButtonAll
                     accountButton={handleNext}
                     text='Next->'
@@ -159,13 +159,13 @@ export default function MyDetailFirst() {
                     width='100px'
                     disabled={!isValid}
                 />
-            </div>
+            </Box>
 
 
 
-            <div className='footerNew1'>
+            <Box className='footerNew1'>
                 <Footer />
-            </div>
+            </Box>
 
         </div>
     )

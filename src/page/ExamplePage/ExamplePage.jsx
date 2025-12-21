@@ -72,9 +72,9 @@ export default function ExamplePage() {
                 </Box>
             </Box>
 
-            <div className='footerNew'>
+            <Box className='footerNew'>
                 <Footer />
-            </div>
+            </Box>
 
         </div>
     )

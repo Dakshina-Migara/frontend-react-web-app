@@ -73,9 +73,9 @@ export default function HomePage() {
                 </Box>
             </Box>
 
-            <div className='footerNew'>
+            <Box className='footerNew'>
                 <Footer />
-            </div>
+            </Box>
 
         </div>
     )
