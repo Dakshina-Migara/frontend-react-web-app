@@ -98,7 +98,7 @@ export default function MyDetailThird() {
             </Box>
 
             {isMarried && (
-                <div className="pageContent">
+                <Box className="pageContent">
                     <Box sx={{ marginTop: 4, display: 'flex', justifyContent: 'center' }}>
                         <ChildSlider
                             value={numKids}
@@ -122,7 +122,7 @@ export default function MyDetailThird() {
                             />
                         </Box>
                     ))}
-                </div>
+                </Box>
             )}
 
             
@@ -138,9 +138,9 @@ export default function MyDetailThird() {
                 />
             </Box>
 
-            <div className='footerNew1'>
+            <Box className='footerNew1'>
                 <Footer />
-            </div>
+            </Box>
         </div>
     )
 }

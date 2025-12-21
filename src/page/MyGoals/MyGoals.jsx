@@ -85,7 +85,7 @@ export default function MyGoals() {
                 />
             </Box>
 
-            <div className="goalImageContainer">
+            <Box className="goalImageContainer">
                 <img src="src/assets/Group 182.png" alt="first" className="goalImage" />
                 <img src="src/assets/Group 1429.png" alt="second" className="goalImage" />
                 <img src="src/assets/Group 1436.png" alt="third" className="goalImage" />
@@ -93,9 +93,9 @@ export default function MyGoals() {
                 <img src="src/assets/Group 1525.png" alt="fifth" className="goalImage" />
                 <img src="src/assets/Group 1437.png" alt="six" className="goalImage" />
                 <img src="src/assets/Group 1438.png" alt="seven" className="goalImage" />
-            </div>
+            </Box>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px', marginRight: '90px' , marginBottom:'80px'}}>
+            <Box style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px', marginRight: '90px' , marginBottom:'80px'}}>
                 <ButtonAll
                     variant='outlined'
                     text='Next->'
@@ -105,12 +105,12 @@ export default function MyGoals() {
                     width='140px'
                     textColor='white'
                 />
-            </div>
+            </Box>
 
 
-            <div className='footerNew1'>
+            <Box className='footerNew1'>
                 <Footer />
-            </div>
+            </Box>
 
         </div>
     )
