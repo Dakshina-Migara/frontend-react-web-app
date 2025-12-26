@@ -1,9 +1,10 @@
+import './ButtonAll.css';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 export default function ButtonAll({ accountButton, textColor, text, width, height, left, top, backcolor, borderColor, variant }) {
     return (
-        <div>
+        <div className="button-all-container">
             <Stack direction="row" spacing={2}>
                 <Button variant={variant}
                     onClick={accountButton}

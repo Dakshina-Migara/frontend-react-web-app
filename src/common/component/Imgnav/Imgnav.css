@@ -1,4 +1,26 @@
 .logonav {
     margin: 20px 30px;
     width: 160px;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .logonav {
+        width: 100px !important;
+        margin: 15px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .logonav {
+        width: 130px !important;
+        margin: 15px 30px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logonav {
+        width: 160px !important;
+        margin: 20px 60px !important;
+    }
 }

@@ -10,7 +10,6 @@ export default function ButtonNav({ accountButton, text }) {
         <Button variant="outlined"
           onClick={accountButton}
           sx={{
-            width: '100%',
             height: '50px',
             backgroundColor: 'transparent',
             border: '1px solid #FE5000',
