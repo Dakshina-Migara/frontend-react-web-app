@@ -1,10 +1,12 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 .homepage-container {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .footerNew {
@@ -15,6 +17,158 @@
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 20px;
 }
 
+@media (max-width: 767px) {
+    .homepage-container>div:nth-child(3) {
+        flex-direction: column !important;
+        padding: 10px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child {
+        margin-left: 0 !important;
+        margin-top: 30px !important;
+        max-width: 100% !important;
+        padding: 0 10px;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child h2 {
+        font-size: 24px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child span {
+        font-size: 14px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:last-child {
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 30px;
+        order: -1;
+    }
+
+    .communityImage {
+        width: 100%;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .homepage-container>div:nth-child(3) {
+        flex-direction: column !important;
+        padding: 40px 30px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child {
+        margin-left: 0 !important;
+        margin-top: 40px !important;
+        max-width: 100% !important;
+        padding: 0 20px;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child h2 {
+        font-size: 36px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child span {
+        font-size: 16px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:last-child {
+        max-width: 80% !important;
+        margin: 40px auto 0 !important;
+        order: -1;
+    }
+
+    .communityImage {
+        width: 100%;
+        margin-left: 103px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .homepage-container>div:nth-child(3) {
+        padding: 60px 30px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child {
+        margin-left: 40px !important;
+        margin-top: 60px !important;
+        max-width: 450px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child h2 {
+        font-size: 50px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child span {
+        font-size: 16px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:last-child {
+        max-width: 45% !important;
+    }
+
+    .communityImage {
+        width: 100%;
+        margin-left: 30px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .homepage-container>div:nth-child(3) {
+        padding: 60px 40px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child {
+        margin-left: 60px !important;
+        margin-top: 80px !important;
+        max-width: 500px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child h2 {
+        font-size: 70px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child span {
+        font-size: 18px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:last-child {
+        max-width: 48% !important;
+    }
+
+    .communityImage {
+        width: 100%;
+        margin-left: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .homepage-container>div:nth-child(3) {
+        padding: 80px 60px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child {
+        margin-left: 100px !important;
+        margin-top: 100px !important;
+        max-width: 500px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child h2 {
+        font-size: 75px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:first-child span {
+        font-size: 18px !important;
+    }
+
+    .homepage-container>div:nth-child(3)>div:last-child {
+        max-width: 50% !important;
+    }
+
+    .communityImage {
+        width: 100%;
+        margin-left: 60px;
+    }
+}
