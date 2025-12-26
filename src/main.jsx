@@ -8,6 +8,7 @@ import { store } from './redux/store'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    {/* meken karanne data global karana eka ee kiyanne app eke thiyena hema ekatama data valid wena eka */}
     <Provider store={store}>
       <BrowserRouter>
         <App />

@@ -105,7 +105,7 @@ export default function MyDetailSecond() {
 
 
 
-            <div style={{ width: '500px', gap: '20px', marginTop: '20px', marginBottom: '140px' }}>
+            <Box style={{ width: '500px', gap: '20px', marginTop: '20px', marginBottom: '140px' }}>
                 <StateSwitch
                     left='500px'
                     checked={isMarried}
@@ -135,14 +135,14 @@ export default function MyDetailSecond() {
                     backcolor='#FE5000'
                     disabled={!isValid}
                 />
-            </div>
+            </Box>
 
 
 
 
-            <div className='footerNew1'>
+            <Box className='footerNew1'>
                 <Footer />
-            </div>
+            </Box>
         </div>
     )
 }
