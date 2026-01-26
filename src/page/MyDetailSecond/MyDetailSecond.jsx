@@ -23,7 +23,6 @@ export default function MyDetailSecond() {
     const userName = `${formData.firstName || ''} ${formData.lastName || ''}`;
     const gender = formData.genderData?.gender || '';
     const age = formData.age || '';
-
     const [isMarried, setIsMarried] = useState(formData.isMarried || false);
     const [spouseName, setSpouseName] = useState(formData.spouseName || '');
     const [isValid, setIsValid] = useState(false);
