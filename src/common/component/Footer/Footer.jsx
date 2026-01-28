@@ -13,32 +13,31 @@ export default function Footer() {
             component="footer"
             sx={{
                 width: '100%',
-                paddingTop: '8px',
-                paddingBottom: '8px',
-                paddingLeft: '16px',
-                paddingRight: '16px',
-                backgroundColor: '#ffffffff',
+                px: 2,
+                py: 1,
+                backgroundColor: '#ffffff',
                 display: 'flex',
-                flexDirection: 'row',   
+                flexDirection: { xs: 'column', sm: 'row' },
                 alignItems: 'center',
-                justifyContent: 'space-between',
-                boxSizing: 'border-box',
-                flexWrap: 'wrap',      
+                justifyContent: 'space-between'
             }}
         >
-            <Box sx={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070', width: '28px', height: '28px' }}>
-                    <FacebookOutlinedIcon />
-                </IconButton>
-                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070', width: '28px', height: '28px' }}>
-                    <InstagramIcon />
-                </IconButton>
-                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070', width: '28px', height: '28px'}}>
-                    <LinkedInIcon />
-                </IconButton>
-                <IconButton sx={{ backgroundColor: '#e6e8f0', color: '#747070',width: '28px', height: '28px'}}>
-                    <TwitterIcon />
-                </IconButton>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+                {[FacebookOutlinedIcon, InstagramIcon, LinkedInIcon, TwitterIcon].map(
+                    (Icon, index) => (
+                        <IconButton
+                            key={index}
+                            sx={{
+                                backgroundColor: '#e6e8f0',
+                                color: '#747070',
+                                width: { xs: 32, sm: 28 },
+                                height: { xs: 32, sm: 28 },
+                            }}
+                        >
+                            <Icon fontSize="small" />
+                        </IconButton>
+                    )
+                )}
             </Box>
 
             <Typography
@@ -46,8 +45,7 @@ export default function Footer() {
                     fontSize: '12px',
                     fontWeight: 'bold',
                     color: '#747070',
-                    textAlign: 'right',
-                    marginTop: '0px',      
+                    textAlign: { xs: 'center', sm: 'right' },
                 }}
             >
                 Find your Needs
