@@ -13,131 +13,91 @@ import { useSelector, useDispatch } from 'react-redux';
 import { saveData, nextStep } from '../../redux/formSlice';
 import { useNavigate } from 'react-router-dom';
 
-
 export default function MyDetailSecond() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
     const formData = useSelector((state) => state.form.data);
     const userName = `${formData.firstName || ''} ${formData.lastName || ''}`;
     const gender = formData.genderData?.gender || '';
     const age = formData.age || '';
+
     const [isMarried, setIsMarried] = useState(formData.isMarried || false);
     const [spouseName, setSpouseName] = useState(formData.spouseName || '');
     const [isValid, setIsValid] = useState(false);
-
 
     useEffect(() => {
         setIsValid(isMarried ? spouseName.trim() !== '' : true);
     }, [isMarried, spouseName]);
 
-
-
-
     const handleNext = () => {
         if (!isValid) return;
-
         dispatch(saveData({
             isMarried,
             spouseName: isMarried ? spouseName : ''
         }));
-
         dispatch(nextStep());
         navigate('/fifthpage');
     };
 
-
-
     return (
         <div className='MydetailSecond'>
 
-
             <ImgNav />
-
-
 
             <ProcessBar
                 processText={'My Details'}
-                backtap={() => console.log('halooooo')}
+                backtap={() => console.log('back tapped')}
                 processStep={1}
                 processVal={33.33}
             />
 
+            <Box className="mydetailsecond-header">
+                <Typography variant="h6" gutterBottom>
+                    My name is <span style={{ color: '#FE5000' }}>{userName}</span>
+                </Typography>
+                <Typography variant="h6">
+                    And I am <span style={{ color: '#FE5000' }}>{gender}</span> of <span style={{ color: '#FE5000' }}>{age} years old.</span>
+                </Typography>
+            </Box>
 
-
-
-            <Typography variant="h6" gutterBottom sx={{ marginLeft: '520px', lineHeight: 1.8, marginTop: '20px' }}>
-                My name is {userName}
-
-            </Typography>
-
-
-
-
-            <Typography
-                variant="h6"
-                sx={{ marginLeft: '480px' }}
-            >
-                And I am {gender} of {age} years old.
-            </Typography>
-
-
-
-
-            <Box sx={{
-                maxWidth: 500,
-                marginLeft: '450px',
-                marginTop: '30px',
-                display: 'flex',
-                flexDirection: 'column',
-            }}>
-                <Typography
-                    variant="h5"
-                    gutterBottom
-                    sx={{ fontWeight: 'bold' }}
-                >
+            <Box className="mydetailsecond-question">
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>
                     Are you married?
                 </Typography>
             </Box>
 
-
-
-
-            <Box style={{ width: '500px', gap: '20px', marginTop: '20px', marginBottom: '140px' }}>
+            <Box className="mydetailsecond-form">
                 <StateSwitch
-                    left='500px'
                     checked={isMarried}
                     onChange={(val) => setIsMarried(val)}
                 />
+
                 {isMarried && (
-                    <TextArea
-                        textFieldText='My wife is'
-                        placeholderText=''
-                        startIcon={<GirlIcon />}
-                        width='50%'
-                        left='500px'
-                        margintop='20px'
-                        value={spouseName}
-                        onChange={(val) => setSpouseName(val.target.value)}
-                    />
+                    <Box className="mydetailsecond-spouse">
+                        <TextArea
+                            textFieldText='My wife is'
+                            placeholderText=''
+                            startIcon={<GirlIcon />}
+                            width='100%'
+                            value={spouseName}
+                            onChange={(val) => setSpouseName(val.target.value)}
+                        />
+                    </Box>
                 )}
 
-                <ButtonAll
-                    accountButton={handleNext}
-                    text='Next->'
-                    height='40px'
-                    width='100px'
-                    left='655px'
-                    top='50px'
-                    textColor='white'
-                    backcolor='#FE5000'
-                    disabled={!isValid}
-                />
+                <Box className="mydetailsecond-button">
+                    <ButtonAll
+                        accountButton={handleNext}
+                        text='Next ->'
+                        height='40px'
+                        width='120px'
+                        textColor='white'
+                        backcolor='#FE5000'
+                        disabled={!isValid}
+                    />
+                </Box>
             </Box>
-
-
-
 
             <Box className='footerNew1'>
                 <Footer />

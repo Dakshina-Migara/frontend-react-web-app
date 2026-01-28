@@ -1,28 +1,95 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 .MyGoals {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.goalImageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 100px;
+    margin-right: 90px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.goalImageContainer .goalImage {
+    flex: 1 1 calc((100% - 30px) / 3); 
+    max-width: calc((100% - 30px) / 3);
+    height: auto;
 }
 
 .footerNew1 {
     margin-top: auto;
 }
 
-.goalImageContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    margin-left: 80px;
-    max-width: 1000px;
+@media (max-width: 1024px) {
+    .goalImageContainer {
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .goalImageContainer .goalImage {
+        flex: 1 1 calc((100% - 12px) / 2); 
+        max-width: calc((100% - 12px) / 2);
+    }
+
+    .MyGoals > div:nth-child(4) {
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        gap: 10px;
+    }
+
+    .MyGoals > div:nth-child(3) {
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+    }
 }
 
-.goalImage {
-    width: 320px;
-    height: 200px;
-    object-fit: contain;
+@media (max-width: 767px) {
+    .goalImageContainer {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .goalImageContainer .goalImage {
+        flex: 1 1 100%; 
+        max-width: 100%;
+    }
+
+    .MyGoals > div:nth-child(4) {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .MyGoals > div:nth-child(3) {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .goalImageContainer {
+        gap: 8px;
+    }
+
+    .goalImageContainer .goalImage {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }

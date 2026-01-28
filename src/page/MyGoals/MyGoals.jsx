@@ -9,12 +9,7 @@ import ButtonAll from '../../common/component/ButtonAll/ButtonAll'
 export default function MyGoals() {
     return (
         <div className='MyGoals'>
-
-
-
             <ImgNav />
-
-
 
             <ProcessBar
                 processText={'My Goals'}
@@ -22,8 +17,6 @@ export default function MyGoals() {
                 processStep={3}
                 processVal={100}
             />
-
-
 
             <Box sx={{
                 maxWidth: 500,
@@ -40,8 +33,6 @@ export default function MyGoals() {
                     What are your main goals <br /> in life?
                 </Typography>
             </Box>
-
-
 
             <Box
                 sx={{
@@ -95,7 +86,7 @@ export default function MyGoals() {
                 <img src="src/assets/Group 1438.png" alt="seven" className="goalImage" />
             </Box>
 
-            <Box style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px', marginRight: '90px' , marginBottom:'80px'}}>
+            <Box style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px', marginRight: '90px', marginBottom: '80px' }}>
                 <ButtonAll
                     variant='outlined'
                     text='Next->'
@@ -106,7 +97,6 @@ export default function MyGoals() {
                     textColor='white'
                 />
             </Box>
-
 
             <Box className='footerNew1'>
                 <Footer />
